@@ -1,0 +1,14 @@
+ <!-- Brand Section -->
+    <section class="section brand">
+        <div class="brand-container container">
+            <h4 class="section-subtitle"><i>Our Trusted Brand</i></h4>
+
+            <div class="brand-images">
+                {% for brand in brands %}
+                <div class="brand-image">
+                    <img src="{{brand.brandimage.url}}" alt="" class="brand-img">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>

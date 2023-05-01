@@ -1,0 +1,134 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="," />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="12">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+            <item index="6" class="java.lang.String" itemvalue="h4" />
+            <item index="7" class="java.lang.String" itemvalue="marquee" />
+            <item index="8" class="java.lang.String" itemvalue="hr" />
+            <item index="9" class="java.lang.String" itemvalue="span" />
+            <item index="10" class="java.lang.String" itemvalue="a" />
+            <item index="11" class="java.lang.String" itemvalue="legend" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E501" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N806" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyRedeclarationInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="django_projects.travel.models.AboutPage.objects" />
+          <option value="django_projects.travel.models.Service.objects" />
+          <option value="personalwebsite.pages.models.AboutPage.objects" />
+          <option value="personalwebsite.pages.models.Service.objects" />
+          <option value="saloonwebsite.newsletter.models.SubscribedUsers.objects" />
+          <option value="newsletter.letter.models.Subscribers.objects" />
+          <option value="saloonwebsite.mainapp.models.Subscribers.objects" />
+          <option value="saloonwebsite.mainapp.models.HomeDetails.objects" />
+          <option value="saloonwebsite.mainapp.models.AboutUs.objects" />
+          <option value="saloonwebsite.mainapp.models.WorkingHoursTable.*" />
+          <option value="saloonwebsite.mainapp.models.SpecialOfferTable.objects" />
+          <option value="saloonwebsite.mainapp.models.Menu.objects" />
+          <option value="saloonwebsite.mainapp.models.AboutUsDetails.objects" />
+          <option value="salonwebsite.main.models.HomeDetails.*" />
+          <option value="salonwebsite.main.models.Subscribers.objects" />
+          <option value="salonwebsite.main.models.AboutUs.objects" />
+          <option value="salonwebsite.main.models.Menu.objects" />
+          <option value="salonwebsite.main.models.SpecialOfferTable.objects" />
+          <option value="salonwebsite.main.models.WorkingHoursTable.objects" />
+          <option value="salonwebsite.main.models.Brands.objects" />
+          <option value="salonwebsite.main.models.ReviewsSubtitle.objects" />
+          <option value="salonwebsite.main.models.Testimonials.objects" />
+          <option value="salonwebsite.main.models.Navbar.objects" />
+          <option value="salonwebsite.main.models.NewsLetters.objects" />
+          <option value="saloonwebsite.mainapp.models.Brands.*" />
+          <option value="saloonwebsite.mainapp.models.ReviewsSubtitle.objects" />
+          <option value="saloonwebsite.mainapp.models.Testimonials.objects" />
+          <option value="saloonwebsite.mainapp.models.Navbar.objects" />
+          <option value="saloonwebsite.mainapp.models.NewsLetters.objects" />
+          <option value="djangoupload.main.models.Images.objects" />
+          <option value="inventoryproject.user.models.Profile.objects" />
+          <option value="inventoryproject.dashboard.models.Product.objects" />
+          <option value="inventoryproject.dashboard.models.Order.objects" />
+          <option value="object.form_invalid" />
+          <option value="object.form_valid" />
+          <option value="salonwebsite.user.models.ClientData.objects" />
+          <option value="salonwebsite.main.models.Testimonials.object" />
+          <option value="django.http.request.POST" />
+          <option value="salonwebsite.user.views.*" />
+          <option value="salonwebsite.user.models.User.objects" />
+          <option value="salonwebsite.user.models.User.DoesNotExist" />
+          <option value="salonwebsite.user.forms.SignupForm.save" />
+          <option value="saloonwebsite.users.models.EmailVerification.objects" />
+          <option value="saloonwebsite.users.forms.RegistrationForm.save" />
+          <option value="salonwebsite.user.models.EmailConfirmation.objects" />
+          <option value="emailsending.user.views.*" />
+          <option value="django.contrib.auth.models.User.DoesNotExist" />
+          <option value="emailsending.user.models.User.objects" />
+          <option value="emailsending.user.models.User.DoesNotExist" />
+          <option value="salonwebsite.user.models.CustomUser.objects" />
+          <option value="django.db.models.fields.related.ForeignKey.slug" />
+          <option value="signup.main.models.Article.objects" />
+          <option value="signup.main.models.ArticleSeries.objects" />
+          <option value="salonwebsite.management.models.Product.objects" />
+          <option value="salonwebsite.management.models.SpecialMenu.objects" />
+          <option value="salonwebsite.management.forms.SpecialMenuForm.pk" />
+          <option value="salonwebsite.management.forms.SpecialMenuForm.objects" />
+          <option value="BarbieSalon.dashboard.models.Product.objects" />
+          <option value="BarbieSalon.dashboard.models.Order.objects" />
+          <option value="BarbieSalon.dashboard.models.Subscribers.objects" />
+          <option value="BarbieSalon.dashboard.models.Navbar.objects" />
+          <option value="BarbieSalon.dashboard.models.HomeDetails.objects" />
+          <option value="BarbieSalon.CustomerView.models.BusinessData.objects" />
+          <option value="BarbieSalon.CustomerView.models.HomeSlideImg.objects" />
+          <option value="BarbieSalon.User.models.Profile.objects" />
+          <option value="BarbieSalon.User.models.Admin.DoesNotExist" />
+          <option value="BarbieSalon.User.models.Admin.objects" />
+          <option value="BarbieSalon.dashboard.models.AboutUs.objects" />
+          <option value="BarbieSalon.dashboard.models.Menu.objects" />
+          <option value="BarbieSalon.dashboard.models.SpecialOfferTable.objects" />
+          <option value="BarbieSalon.dashboard.models.WorkingHoursTable.objects" />
+          <option value="BarbieSalon.dashboard.models.NewsLetters.objects" />
+          <option value="BarbieSalon.dashboard.models.ReviewsSubtitle.objects" />
+          <option value="BarbieSalon.dashboard.models.Brands.objects" />
+          <option value="register.login.models.User.objects" />
+          <option value="register.User.models.User.objects" />
+          <option value="register.User.models.User.DoesNotExist" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

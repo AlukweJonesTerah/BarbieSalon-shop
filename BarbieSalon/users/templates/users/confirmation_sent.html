@@ -1,0 +1,10 @@
+<h1>Confirmation Sent</h1>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<p>An email has been sent to your address with a link to confirm your email. Please click the link to complete the
+    confirmation process.</p>

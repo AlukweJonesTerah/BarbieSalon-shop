@@ -1,0 +1,26 @@
+<section class="home" id="home">
+    <div class="home-content">
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                {% for image in images %}
+                <div class="swiper-slide">
+                    <img src="{{image.homeimage.url}}" alt="home image broken " class="home-img">
+
+                    <div class="home-details">
+                        <div class="home-text">
+                            <h4 class="homeSubtitle">{{image.subtitle}}</h4>
+                            <h2 class="homeTitle">{{image.hometitle1}}<br>{{image.hometitle2}}</h2>
+                        </div>
+
+                        <button class="button">Explore</button>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="swiper-button-next swiper-navBtn"></div>
+            <div class="swiper-button-prev swiper-navBtn"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>

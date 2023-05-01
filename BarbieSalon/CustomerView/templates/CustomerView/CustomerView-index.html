@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Start of Tawk.to meta-->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!--End of Tawk.to meta-->
+    <title>Barbie Salon</title>
+
+    <!-- Swiper JS CSS-->
+    <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+
+    <!-- Scroll Reveal -->
+    <link rel="stylesheet" href="static/js/scrollreveal.min.js">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+    <nav class="nav container flex">
+        <a href="#" class="logo-content flex">
+            {% for nav in navs %}
+            <i class='bx bx-coffee logo-icon'></i>
+            <span class="logo-text">{{nav.business_name}}</span>
+            {% endfor %}
+        </a>
+
+        <div class="menu-content">
+            <ul class="menu-list flex">
+                <li><a href="#home" class="nav-link active-navlink">home</a></li>
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="#menu" class="nav-link">menu</a></li>
+                <li><a href="#review" class="nav-link">review</a></li>
+            </ul>
+
+            <div class="media-icons flex">
+                <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
+                <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/accounts/login"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/login"><i class='bx bxl-github'></i></a>
+                <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
+            </div>
+
+            <i class='bx bx-x navClose-btn'></i>
+        </div>
+
+        <div class="contact-content flex">
+            {% for nav in navs %}
+            <i class='bx bx-phone phone-icon'></i>
+            <span class="phone-number">{{nav.phone_number}}</span>
+            {% endfor %}
+        </div>
+
+        <i class='bx bx-menu navOpen-btn'></i>
+    </nav>
+
+</header>
+
+<!-- Home Section -->
+<main>
+    <section class="home" id="home">
+        <div class="home-content">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for homedetail in homedetails %}
+                    <div class="swiper-slide">
+                        <img src="{{homedetail.homeimage}}" alt="" class="home-img">
+
+                        <div class="home-details">
+                            <div class="home-text">
+                                <h4 class="homeSubtitle">{{homedetail.subtitle}}</h4>
+                                <h2 class="homeTitle">{{homedetail.hometitle1}}<br>{{homedetail.hometitle2}}</h2>
+                            </div>
+
+                            <button class="button">Explore</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="about-content container">
+            {% for aboutdetail in aboutdetails %}
+            <div class="about-imageContent">
+                <img src="{{aboutdetail.aboutimg}}" alt="" class="about-img">
+
+                <div class="aboutImg-textBox">
+                    <i class='bx bx-heart heart-icon flex'></i>
+                    <p class="content-description">{{aboutdetail.aboutuscaption}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="about-details">
+                {% for aboutdetail in aboutdetails %}
+                <div class="about-text">
+                    <h4 class="content-subtitle"><i>{{aboutdetail.subtitle}}</i></h4>
+                    <h2 class="content-title">{{aboutdetail.title1}} <br> {{aboutdetail.title2}}</h2>
+                    <p class="content-description">{{aboutdetail.description}}</p>
+
+                    <ul class="about-lists flex">
+                        <li class="about-list">Knotless Braids</li>
+                        <li class="about-list dot">.</li>
+                        <li class="about-list">Short Faux Locs</li>
+                        <li class="about-list dot">.</li>
+                        <li class="about-list">Buntu Knots</li>
+                    </ul>
+                </div>
+                {% endfor%}
+                <div class="about-buttons flex">
+                    <button class="button">About Us</button>
+                    <a href="#" class="about-link flex">
+                        <span class="link-text">see more</span>
+                        <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Menu Section -->
+    <section class="section menu" id="menu">
+        <div class="menu-container container">
+            {% for detail in details %}
+            <div class="meu-text">
+                <h4 class="section-subtitle"><i>{{detail.subtitle}}</i></h4>
+                <h2 class="section-title">{{detail.title}}</h2>
+                <p class="section-description">
+                    {{detail.description}}
+                </p>
+            </div>
+            {% endfor %}
+
+            <div class="menu-content">
+                <div class="menu-items">
+                    <div class="menu-item flex">
+                        {% for offer in offers %}
+                        <div class="menu-item flex">
+                            <img src="{{offer.hairstyleimage}}" alt="" class="menu-img">
+
+                            <div class="menuItem-details">
+                                <h4 class="menuItem-topic">{{offer.hairstylename}}</h4>
+                                <p class="menuItem-des">{{offer.description}}</p>
+                            </div>
+
+                            <div class="menuItem-price flex">
+                                <span class="discount-price">{{offer.discountPrice}}</span>
+                                <span class="real-price">{{offer.initialprice}}</span>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="time-table">
+                    <span class="time-topic">Working Hours</span>
+                    <ul class="time-lists">
+                        {% for workhour in workhours %}
+                        <li class="time-list flex">
+                            <span class="open-day"> {{workhour.day}}</span>
+                            <span class="open-time">{{workhour.time}}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Brand Section -->
+    <section class="section brand">
+        <div class="brand-container container">
+            <h4 class="section-subtitle"><i>Our Trusted Brand</i></h4>
+
+            <div class="brand-images">
+                {% for brand in brands%}
+                <div class="brand-image">
+                    <img src="{{brand.brandimage}}" alt="" class="brand-img">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Reviews Section -->
+    <section class="section review" id="review">
+        <div class="review-container container">
+            <div class="review-text">
+                {% for review_subtitle in reviews_subtitles %}
+                <h4 class="section-subtitle"><i>{{review_subtitle.subtitle}}</i></h4>
+                <h2 class="section-title">{{review_subtitle.title}}</h2>
+                <p class="section-description">{{review_subtitle.description}}</p>
+                {% endfor %}
+            </div>
+
+            <div class="tesitmonial swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for testimony in testimonies %}
+                    <div class="testi-content swiper-slide flex">
+                        <img src="{{testimony.profilepic}}" alt="" class="review-img">
+                        <p class="review-quote">{{testimony.quot}}</p>
+                        <i class='bx bxs-quote-alt-left quote-icon'></i>
+
+                        <div class="testi-personDetails flex">
+                            <span class="name">{{testimony.name}}</span>
+                            <span class="job">{{testimony.job}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter">
+        <div class="newletter-container container">
+            <a href="#" class="logo-content flex">
+                {% for nav in navs %}
+                <i class='bx bx-coffee logo-icon'></i>
+                <span class="logo-text">{{nav.business_name}}</span>
+                {% endfor %}
+            </a>
+            {% for newsletter in newsletters %}
+            <p class="section-description">{{newsletter.newsletter_description}}</p>
+            {% endfor %}
+
+              {% for message in messages %}
+            <div class="newsletter-message">
+
+                {{ message}}
+            </div>
+
+            {% endfor %}
+
+            <div class="newsletter-inputBox">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.email}}
+                    <button class="button newsletter-button">Subscribe</button>
+                </form>
+            </div>
+
+            <div class="newsletter media-icons flex">
+                <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
+                <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/accounts/login"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/login"><i class='bx bxl-github'></i></a>
+                <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
+                <a href=" https://wa.me/254745983042?text=I'm%20interested%20in%20your%20car%20for%20sale"><i
+                        class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer Section -->
+    <footer class="section footer">
+        <div class="footer-container container">
+            <div class="footer-content">
+                <a href="#" class="logo-content flex">
+                    {% for nav in navs %}
+                    <i class='bx bx-coffee logo-icon'></i>
+                    <span class="logo-text">{{nav.business_name}}</span>
+                    {% endfor %}
+                </a>
+
+                <p class="content-description">We work together to bring a united workforce and team to all ensure our
+                    customers happy and contented.<br> We as {{nav.business_name}} are always happy to be at your
+                    service.</p>
+
+                <div class="footer-location flex">
+                    <i class='bx bx-map map-icon'></i>
+
+                    <div class="location-text">
+                        Kenya Kajiado Kitengela Acacia A12
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-linkContent">
+                <ul class="footer-links">
+                    <h4 class="footerLinks-title">Facility</h4>
+
+                    <li><a href="#" class="footer-link">Private Room</a></li>
+                    <li><a href="#" class="footer-link">Meeting Room</a></li>
+                    <li><a href="#" class="footer-link">Event Room</a></li>
+                    <li><a href="#" class="footer-link">Creative Studio</a></li>
+                    <li><a href="#" class="footer-link">Custom Room</a></li>
+                </ul>
+                <ul class="footer-links">
+                    <h4 class="footerLinks-title">Services</h4>
+
+                    <li><a href="#" class="footer-link">Pedicure</a></li>
+                    <li><a href="#" class="footer-link">Manicure</a></li>
+                    <li><a href="#" class="footer-link">Hairdressing </a></li>
+                    <li><a href="#" class="footer-link">Blow Drying </a>
+                    <li><a href="#" class="footer-link">Massages </a></li>
+                    <li><a href="#" class="footer-link">Waxing and hair removal </a></li>
+
+                </ul>
+                <ul class="footer-links">
+                    <h4 class="footerLinks-title">Support</h4>
+
+                    <li><a href="#" class="footer-link">About Us</a></li>
+                    <li><a href="#" class="footer-link">FAQs</a></li>
+                    <li><a href="#" class="footer-link">Private Policy</a></li>
+                    <li><a href="#" class="footer-link">Help Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyRight">Copyright &#169;, Designed By TechFuture. Alukwe . All Rights Reservered
+            <script>
+            document.write(new Date().getFullYear())
+
+
+            </script>
+        </div>
+    </footer>
+
+    <!-- Scroll Up -->
+    <a href="#home" class="scrollUp-btn flex">
+        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+    </a>
+
+</main>
+
+<!-- Swiper JS -->
+<script src="js/swiper-bundle.min.js"></script>
+
+<!-- Scroll Reveal -->
+<script src="js/scrollreveal.js"></script>
+
+<!-- JavaScript -->
+<script src="js/script.js"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6391ed75daff0e1306db97df/1gjp0f55j';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>
+
+<!-- <input type="email" placeholder="emai@example.com" class="newletter-input">-->

@@ -1,0 +1,32 @@
+ <!-- Reviews Section -->
+    <section class="section review" id="review">
+        <div class="review-container container">
+            <div class="review-text">
+                {% for review in reviews %}
+                <h4 class="section-subtitle"><i>{{review.subtitle}}</i></h4>
+                <h2 class="section-title">{{review_.title}}</h2>
+                <p class="section-description">{{review.description}}</p>
+                {% endfor %}
+            </div>
+
+            <div class="tesitmonial swiper mySwiper">
+                <div class="swiper-wrapper">
+                    {% for testimony in testimonies %}
+                    <div class="testi-content swiper-slide flex">
+                        <img src="{{testimony.profilepic}}" alt="" class="review-img">
+                        <p class="review-quote">{{testimony.quot}}</p>
+                        <i class='bx bxs-quote-alt-left quote-icon'></i>
+
+                        <div class="testi-personDetails flex">
+                            <span class="name">{{testimony.name}}</span>
+                            <span class="job">{{testimony.job}}</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>

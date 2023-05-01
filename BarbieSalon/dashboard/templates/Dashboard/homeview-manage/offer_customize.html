@@ -1,0 +1,58 @@
+{% extends 'partials/base.html' %}
+{% block title %}Special Customizing  Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include 'partials/topside.html' %}
+<div class="row my-4">
+    <div class="col-md-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="card card-body">
+            <h5>Add An Offer</h5>
+            <hr>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-success btn-block" type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <table class="table bg-white">
+            <thead class="bg-info text-white">
+            <tr>
+                <th scope="col">Image Style</th>
+                <th scope="col">Style Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Discount Price</th>
+                <th scope="col">Initial Price</th>
+                <th scope="col">Activity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for offer in offer %}
+            <tr>
+                <td><img src="{{ offer.hairstyleimage.url }}" alt="Special Ofer Image" class="img-fluid"></td>
+                <td>{{ offer.hairstylename|truncatewords:5}}</td>
+                <td>{{ offer.description|truncatewords:5}}</td>
+                <td>{{ offer.discountPrice|truncatewords:5}}</td>
+                <td>{{ offer.initialprice|truncatewords:5}}</td>
+                <td>
+                    <a class="btn btn-info btn-sm mr-2"
+                       href="{% url 'dashboard-offer_customize_edit' offer.id %}">Edit</a>
+                    <a class="btn btn-danger btn-sm ml-2"
+                       href="{% url 'dashboard-offer_customize_delete' offer.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'partials/base.html' %}
+{% block content %}
+<link rel="stylesheet" href="static/style/service.css"/>
+<!--Section page -->
+<section>
+    <div class="row">
+        <h2 class="section-heading">Our Services</h2>
+    </div>
+    <div class="row">
+        {% for link in links %}
+        <div class="column">
+            <div class="card">
+                <a href="{{link.file}}">
+                    <div class="icon-wrapper">
+                        <i class="{{link.icon}}"></i>
+                    </div>
+                </a>
+                <h3>{{link.heading}}</h3>
+                <p>
+                    {{link.paragraph |truncatewords:14}}
+
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

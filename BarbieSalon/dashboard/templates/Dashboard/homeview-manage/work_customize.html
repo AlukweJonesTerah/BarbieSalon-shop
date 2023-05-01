@@ -1,0 +1,53 @@
+{% extends 'partials/base.html' %}
+{% block title %}Special Customizing  Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include 'partials/topside.html' %}
+<div class="row my-4">
+    <div class="col-md-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="card card-body">
+            <h5>Add Working Time</h5>
+            <hr>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-success btn-block" type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <table class="table bg-white">
+            <thead class="bg-info text-white">
+            <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Activity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for work in work %}
+            <tr>
+                <td>{{ work.day|truncatewords:5}}</td>
+                <td>{{ work.time|truncatewords:5}}</td>
+
+                <td>
+                    <a class="btn btn-info btn-sm mr-2"
+                       href="{% url 'dashboard-work_customize_edit' work.id %}">Edit</a>
+                    <a class="btn btn-danger btn-sm ml-2"
+                       href="{% url 'dashboard-work_customize_delete' work.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

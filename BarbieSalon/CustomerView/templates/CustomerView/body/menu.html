@@ -1,0 +1,48 @@
+<!-- Menu Section -->
+    <section class="section menu" id="menu">
+        <div class="menu-container container">
+            {% for menu in menus %}
+            <div class="meu-text">
+                <h4 class="section-subtitle"><i>{{menu.subtitle}}</i></h4>
+                <h2 class="section-title">{{menu.title}}</h2>
+                <p class="section-description">
+                    {{menu.description}}
+                </p>
+            </div>
+            {% endfor %}
+
+            <div class="menu-content">
+                <div class="menu-items">
+                    {% for offer in offers %}
+                    <div class="menu-item flex">
+                        <div class="menu-item flex">
+                            <img src="{{offer.hairstyleimage.url}}" alt="" class="menu-img">
+
+                            <div class="menuItem-details">
+                                <h4 class="menuItem-topic">{{offer.hairstylename}}</h4>
+                                <p class="menuItem-des">{{offer.description}}</p>
+                            </div>
+
+                            <div class="menuItem-price flex">
+                                <span class="discount-price">{{offer.discountPrice}}</span>
+                                <span class="real-price">{{offer.initialprice}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="time-table">
+                    <span class="time-topic">Working Hours</span>
+                    <ul class="time-lists">
+                        {% for workhour in workhours %}
+                        <li class="time-list flex">
+                            <span class="open-day"> {{workhour.day}}</span>
+                            <span class="open-time">{{workhour.time}}</span>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>

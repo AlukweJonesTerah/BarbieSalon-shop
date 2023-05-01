@@ -1,0 +1,41 @@
+<!-- Newsletter Section -->
+<section class="section newsletter">
+    <div class="newletter-container container">
+        <a href="#" class="logo-content flex">
+            {% for nav in navbars %}
+            <i class='bx bx-coffee logo-icon'></i>
+            <span class="logo-text">{{nav.business_name}}</span>
+            {% endfor %}
+        </a>
+        {% for newsletter in newsletters %}
+        <p class="section-description">{{newsletter.newsletter_description}}</p>
+        {% endfor %}
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+
+        <div class="newsletter-inputBox">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{form.email}}
+                <button class="button newsletter-button">Subscribe</button>
+            </form>
+        </div>
+
+        <div class="newsletter media-icons flex">
+            <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
+            <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.instagram.com/accounts/login"><i class='bx bxl-instagram-alt'></i></a>
+            <a href="https://github.com/login"><i class='bx bxl-github'></i></a>
+            <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
+            <a href=" https://wa.me/254745983042?text=I'm%20interested%20in%20your%20car%20for%20sale"><i
+                    class='bx bxl-whatsapp'></i></a>
+        </div>
+    </div>
+</section>

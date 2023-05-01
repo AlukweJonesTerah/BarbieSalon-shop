@@ -1,0 +1,60 @@
+{% extends 'partials/base.html' %}
+{% block title %}About Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include 'partials/topside.html' %}
+<div class="row my-4">
+    <div class="col-md-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="card card-body">
+            <h5>Create About Section</h5>
+            <hr>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-success btn-block" type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <table class="table bg-white">
+            <thead class="bg-info text-white">
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">aboutuscaption</th>
+                <th scope="col">subtitle</th>
+                <th scope="col">title1</th>
+                <th scope="col">title2</th>
+                <th scope="col">description</th>
+                <th scope="col">Activity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for about in about %}
+            <tr>
+                <td><img src="{{ about.aboutimg.url }}" alt="About Image" class="img-fluid"></td>
+                <td>{{ about.aboutuscaption|truncatewords:5 }}</td>
+                <td>{{ about.subtitle|truncatewords:5 }}</td>
+                <td>{{ about.title1|truncatewords:5 }}</td>
+                <td>{{ about.title2|truncatewords:5 }}</td>
+                <td>{{ about.description|truncatewords:5 }}</td>
+                <td>
+                    <a class="btn btn-info btn-sm mr-2"
+                       href="{% url 'dashboard-about_customize_edit' about.id %}">Edit</a>
+                    <a class="btn btn-danger btn-sm ml-2"
+                       href="{% url 'dashboard-about_customize_delete' about.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

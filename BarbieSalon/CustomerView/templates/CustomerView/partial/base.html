@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Start of Tawk.to meta-->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!--End of Tawk.to meta-->
+    <title>{% block title %} Barbie Salon {% endblock %}</title>
+    <link rel="icon" href="{% static 'images/linkimg.jpg' %}">
+
+    <!-- Swiper JS CSS-->
+    <link rel="stylesheet" href="{% static 'css/swiper-bundle.min.css' %}">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+
+<!-- Home Section -->
+{% include 'CustomerView/partial/navbar.html' %}
+<main>
+    {% block content %}
+
+    {% endblock %}
+    {% include 'CustomerView/partial/footer.html' %}
+    <!-- Scroll Up -->
+    <a href="#home" class="scrollUp-btn flex">
+        <i class='bx bx-up-arrow-alt scrollUp-icon'></i>
+    </a>
+
+</main>
+
+<!-- Swiper JS -->
+<script src="static/js/swiper-bundle.min.js"></script>
+
+<!-- Scroll Reveal -->
+<script src="static/js/scrollreveal.js"></script>
+
+<!-- JavaScript -->
+<script src="static/js/script.js"></script>
+
+<!--JS Bootstrap -->
+<script src="static/js/bootstrap.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6391ed75daff0e1306db97df/1gjp0f55j';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+
+</script>
+<!--domain 10.1.45.235-->
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/63c73e0247425128790e3da2/1gn14kfrq';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+<!--End of Tawk.to Script-->
+</body>
+</html>

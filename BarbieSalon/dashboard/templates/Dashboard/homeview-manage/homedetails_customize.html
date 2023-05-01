@@ -1,0 +1,56 @@
+{% extends 'partials/base.html' %}
+{% block title %}Products Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% include 'partials/topside.html' %}
+<div class="row my-4">
+    <div class="col-md-4">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <div class="card card-body">
+            <h5>Add A New Home Image</h5>
+            <hr>
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ h_form|crispy }}
+                <input class="btn btn-success btn-block" type="submit" value="Add">
+            </form>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <table class="table bg-white">
+            <thead class="bg-info text-white">
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">subtitle</th>
+                <th scope="col">hometitle1</th>
+                <th scope="col">hometitle2</th>
+                <th scope="col">Activity</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for home in home %}
+            <tr>
+                <td><img src="{{ home.homeimage.url }}" alt="Image of a Home" class="img-fluid"></td>
+                <td>{{ home.subtitle|truncatewords:5 }}</td>
+                <td>{{ home.hometitle1|truncatewords:5 }}</td>
+                <td>{{ home.hometitle2|truncatewords:5}}</td>
+                <td>
+                    <a class="btn btn-info btn-sm mr-2"
+                       href="{% url 'dashboard-homedetails_customize_edit' home.id %}">Edit</a>
+                    <a class="btn btn-danger btn-sm ml-2"
+                       href="{% url 'dashboard-homedetails_customize_delete' home.id %}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

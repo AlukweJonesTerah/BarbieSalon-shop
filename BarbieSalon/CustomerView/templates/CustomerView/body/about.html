@@ -1,0 +1,40 @@
+ <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="about-content container">
+            {% for about in abouts %}
+            <div class="about-imageContent">
+                <img src="{{about.aboutimg.url}}" alt="" class="about-img">
+
+                <div class="aboutImg-textBox">
+                    <i class='bx bx-heart heart-icon flex'></i>
+                    <p class="content-description">{{about.aboutuscaption}}</p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="about-details">
+                {% for about in abouts %}
+                <div class="about-text">
+                    <h4 class="content-subtitle"><i>{{about.subtitle}}</i></h4>
+                    <h2 class="content-title">{{about.title1}} <br> {{about.title2}}</h2>
+                    <p class="content-description">{{aboutdetail.description}}</p>
+
+                    <ul class="about-lists flex">
+                        <li class="about-list">Knotless Braids</li>
+                        <li class="about-list dot">.</li>
+                        <li class="about-list">Short Faux Locs</li>
+                        <li class="about-list dot">.</li>
+                        <li class="about-list">Buntu Knots</li>
+                    </ul>
+                </div>
+                {% endfor%}
+                <div class="about-buttons flex">
+                    <button class="button">About Us</button>
+                    <a href="#" class="about-link flex">
+                        <span class="link-text">see more</span>
+                        <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>

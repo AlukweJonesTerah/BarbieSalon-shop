@@ -1,0 +1,57 @@
+<header class="header">
+    <nav class="nav container flex">
+        <a href="#" class="logo-content flex">
+            {% for nav in navbars %}
+            <i class='bx bx-coffee logo-icon'></i>
+            <span class="logo-text">{{nav.business_name}}</span>
+            {% endfor %}
+        </a>
+
+        <div class="menu-content">
+            {% if user.is_authenticated %}
+            <ul class="menu-list flex">
+                <li><a href="#home" class="nav-link active-navlink">home</a></li>
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="service.html" class="nav-link">service</a></li>
+                <li><a href="{% url 'logout' %}" class="nav-link">logout</a></li>
+                <li><a href="#menu" class="nav-link">menu</a></li>
+                <li><a href="#menu" class="nav-link">booking</a></li>
+                <li><a href="#review" class="nav-link">review</a></li>
+                <li><a href="#newsletter" class="nav-link">newsletter</a></li>
+            </ul>
+            {% else %}
+            <ul class="menu-list flex">
+                <li><a href="#home" class="nav-link active-navlink">home</a></li>
+                <li><a href="#about" class="nav-link">about</a></li>
+                <li><a href="service.html" class="nav-link">service</a></li>
+                <li><a href="{% url 'users-login' %}" class="nav-link">account</a></li>
+                <li><a href="#menu" class="nav-link">menu</a></li>
+                <li><a href="#review" class="nav-link">review</a></li>
+                <li><a href="#newsletter" class="nav-link">newsletter</a></li>
+            </ul>
+            {% endif %}
+
+            <div class="media-icons flex">
+                <a href="https://www.facebook.com"><i class='bx bxl-facebook'></i></a>
+                <a href="https://twitter.com/i/flow/login"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/accounts/login"><i class='bx bxl-instagram-alt'></i></a>
+                <a href="https://github.com/login"><i class='bx bxl-github'></i></a>
+                <a href="https://www.youtube.com/login"><i class='bx bxl-youtube'></i></a>
+                <a href=" https://wa.me/254745983042?text=I'm%20interested%20in%20your%20car%20for%20sale"><i
+                        class='bx bxl-whatsapp'></i></a>
+            </div>
+
+            <i class='bx bx-x navClose-btn'></i>
+        </div>
+
+        <div class="contact-content flex">
+            {% for nav in navbars %}
+            <i class='bx bx-phone phone-icon'></i>
+            <span class="phone-number">0{{nav.phone_number}}</span>
+            {% endfor %}
+        </div>
+
+        <i class='bx bx-menu navOpen-btn'></i>
+    </nav>
+
+</header>

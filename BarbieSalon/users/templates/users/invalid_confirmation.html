@@ -1,0 +1,10 @@
+<h1>Invalid Confirmation</h1>
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+    {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+<p>The confirmation key you provided is invalid or has expired. Please check the link in the email you received and try
+    again.</p>

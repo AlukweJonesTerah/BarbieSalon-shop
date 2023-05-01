@@ -1,0 +1,19 @@
+{% extends 'partials/base.html' %}
+{% block title %}Working Hours Edit Page{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row my-4">
+    <div class="col-md-6 offset-md-3 p-3 bg-white">
+        <h3>Edit Working Hours Details</h3>
+        <hr>
+        <form method="post" action="{% url 'dashboard-work_customize_edit' pk=workdata.pk %}"
+              enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <input class="btn btn-info" type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
+{% endblock %}
+
